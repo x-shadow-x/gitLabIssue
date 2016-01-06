@@ -31,10 +31,20 @@
         </div>
     </div>
     
-    <div class="filter"></div>
+    <div class="filter">
+        <input type="checkBox" ng-model="markAll" ng-click="toggleMarkAll()">
+    </div>
     <ul>
         <li ng-repeat="item in resultLists">
-            <input type="checkBox" ng-model="">{{item.title}}
+            <div>
+                <div class="left">
+                    <input type="checkBox" ng-model="item.isMark">{{item.title}}   
+                </div>
+                <div class="right">
+                    <span>头像</span>
+                    <span><i>{{item.discussList.length}}</i></span>
+                </div>
+            </div>
         </li>
     </ul>
 </div>

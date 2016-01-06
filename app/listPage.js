@@ -34,6 +34,12 @@ app.controller("listController",["$scope", "$location", "$routeParams", function
         $scope.allNum = $scope.data.length;
     }
 
+    $scope.toggleMarkAll = function() {
+        angular.forEach($scope.resultLists, function(item) {
+            item.isMark = $scope.markAll;
+        })
+    }
+
     $scope.showList = function() {
         switch ($scope.statue) {
             case "open":
