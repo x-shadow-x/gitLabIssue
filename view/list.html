@@ -1,4 +1,4 @@
-<div>
+<div class="issue-list">
     <div class="bar">
         <ul>
             <li>
@@ -8,7 +8,7 @@
                 </a>
             </li>
             <li>
-                <a href="#/list/close">
+                <a href="#/list/closed">
                     <span>Closed</span>
                     <span>{{closedNum}}</span>
                 </a>
@@ -20,31 +20,21 @@
                 </a>
             </li>
         </ul>
-        <div>
-            <a href="javascript:void(0)"></a>
+        <div class="right">
+            <div class="inline">
+                <a href="javascript:void(0)">wifi一样的源码按钮</a>
+            </div>
+            <div class="inline">
+                <input type="text" placeholder="Filter by title or description">
+            </div>
+            <a href="先放着~等添加问题页写完后加上对应的地址" class="inline">添加问题的按钮</a>
         </div>
-        <div>
-            <input type="text" placeholder="Filter by title or description">
-        </div>
-        <a href="先放着~等添加问题页写完后加上对应的地址"></a>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     
     <div class="filter"></div>
     <ul>
-        <li></li>
+        <li ng-repeat="item in resultLists">
+            <input type="checkBox" ng-model="">{{item.title}}
+        </li>
     </ul>
 </div>
