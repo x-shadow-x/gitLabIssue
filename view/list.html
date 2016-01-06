@@ -2,32 +2,32 @@
     <div class="bar">
         <ul>
             <li>
-                <a href="#/list/open">
+                <a href="#/list/open/1">
                     <span>Open</span>
-                    <span>{{openNum}}</span>
+                    <span class="inline-block num-span">{{openNum}}</span>
                 </a>
             </li>
             <li>
-                <a href="#/list/closed">
+                <a href="#/list/closed/1">
                     <span>Closed</span>
-                    <span>{{closedNum}}</span>
+                    <span class="inline-block num-span">{{closedNum}}</span>
                 </a>
             </li>
             <li>
-                <a href="#/list/all">
+                <a href="#/list/all/1">
                     <span>All</span>
-                    <span>{{allNum}}</span>
+                    <span class="inline-block num-span">{{allNum}}</span>
                 </a>
             </li>
         </ul>
         <div class="right">
-            <div class="inline">
+            <div class="inline-block">
                 <a href="javascript:void(0)">wifi一样的源码按钮</a>
             </div>
-            <div class="inline">
+            <div class="inline-block">
                 <input type="text" placeholder="Filter by title or description">
             </div>
-            <a href="先放着~等添加问题页写完后加上对应的地址" class="inline">添加问题的按钮</a>
+            <a href="先放着~等添加问题页写完后加上对应的地址" class="inline-block">添加问题的按钮</a>
         </div>
     </div>
     
@@ -37,14 +37,31 @@
     <ul>
         <li ng-repeat="item in resultLists">
             <div>
-                <div class="left">
+                <div class="left inline-block">
                     <input type="checkBox" ng-model="item.isMark">{{item.title}}   
                 </div>
-                <div class="right">
+                <div class="right inline-block">
                     <span>头像</span>
                     <span><i>{{item.discussList.length}}</i></span>
                 </div>
             </div>
+            <div>
+                <div class="left inline-block">
+                    <span>{{item.issueId}}</span>
+                    <span><timer oldtime="{{item.createTime}}"></timer> by</span>
+                    <span>{{item.author}}</span>
+                    <span><i class="fa fa-clock-o"></i> {{item.version}}</span>
+                </div>
+                <div class="right inline-block">
+                    <span>updated <timer oldtime="{{item.updatedTime}}"></timer></span>
+                </div>
+            </div>
         </li>
     </ul>
+    <ul class="pages inline-block">
+        <li ng-repeat="index in pages">
+            <a href="#/list/{{statue}}/{{index + 1}}" ng-class="{'current-page' : $index == (page - 1)}">{{index + 1}}</a>
+        </li>
+    </ul>
+    <span class="right inline-block total-label">{{allResultNum}} issues for this filter</span>
 </div>
