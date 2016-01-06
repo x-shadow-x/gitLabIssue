@@ -1,0 +1,15 @@
+body{
+    font-size:14px ;
+    font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+    color:#777777;
+    background-color: #EAEBEC;
+}
+a{text-decoration: none;color:#777777;}
+.page-title{
+    height: 50px;
+    background: #fff;
+    line-height: 50px;
+} /*  这是title的样式 */
+.issue-details,.issue-details{
+    background-color: #fff;
+}
