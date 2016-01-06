@@ -60,7 +60,11 @@
     </ul>
     <ul class="pages inline-block">
         <li ng-repeat="index in pages">
+<<<<<<< HEAD
             <a href="#/list/{{statue}}/{{index + 1}}" ng-class="{'current' : $index == (page - 1)}">{{index + 1}}</a>
+=======
+            <a href="#/list/{{statue}}/{{index + 1}}" ng-class="{'current-page' : $index == (page - 1)}">{{index + 1}}</a>
+>>>>>>> 59b28ebd0799418ecf92ef3c2c31477e1fbdc2b8
         </li>
     </ul>
     <span class="right inline-block total-label">{{allResultNum}} issues for this filter</span>

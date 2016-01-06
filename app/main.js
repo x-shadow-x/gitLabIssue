@@ -1,7 +1,7 @@
 angular.module("app",["ngRoute", "listModule", "detailModule"])
 .config(['$routeProvider',function($routeProvider) {
     $routeProvider
-        .when("/list", {
+        .when("/list/:listStatues", {
             templateUrl: "view/list.html",
             controller: "listController"
         })
@@ -9,7 +9,7 @@ angular.module("app",["ngRoute", "listModule", "detailModule"])
             templateUrl: "view/detail.html",
             controller: "detailController"
         })
-        .otherwise(
-            redirectTo: "/view/list.html"
-        )
+        .otherwise({
+            redirectTo: "/list/open"
+        })
 }])
