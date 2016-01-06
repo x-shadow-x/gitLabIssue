@@ -2,16 +2,22 @@ var app = angular.module("listModule",["ng", "ngRoute"]);
 app.controller("listController",["$scope", "$location", "$routeParams", function($scope, $location, $routeParams) {
     $scope.data = {};
     $scope.openNum = $scope.closedNum = $scope.allNum = 0;
-    $scope.resultLists = [];
+    $scope.resultLists = [];//显示在当前页的数据
     $scope.openLists = [];
     $scope.closeLists = [];
     $scope.allLists = [];
+    $scope.pages = [];
+    $scope.currentIndex = 0;
+    $scope.allResultNum = 0;//符合过滤的数据的总数
     $scope.statue = $routeParams.listStatues;
+    $scope.page = parseInt($routeParams.page);//具体哪页
+
+    
     $scope.getData = function() {
         $.getJSON("data/projectData.js", function(result) {
             $scope.data = result.data;
+            $scope.$digest();
         });
-        //console.log($scope.data);
     }
     $scope.getOpenIssueData = function() {
         for(var i = 0, len = $scope.data.length; i < len; i++) {
@@ -34,24 +40,57 @@ app.controller("listController",["$scope", "$location", "$routeParams", function
         $scope.allNum = $scope.data.length;
     }
 
+    $scope.toggleMarkAll = function() {
+        angular.forEach($scope.resultLists, function(item) {
+            item.isMark = $scope.markAll;
+        });
+    }
+
+    $scope.clickItem = function(index) {
+        $scope.currentIndex = index;
+        console.log($scope.currentIndex);
+    }
+
     $scope.showList = function() {
+        var start = ($scope.page - 1) * 5;
+        $scope.pages = [];
         switch ($scope.statue) {
             case "open":
-                $scope.resultLists = $scope.openLists;
+                $scope.allResultNum = $scope.openLists.length;
+                for(var i = 0, len = $scope.openLists.length / 5; i < len; i++) {
+                    $scope.pages.push(i);
+                }
+                var len= $scope.openLists.length;
+                var end = (start + 5) < len ? start + 5 : len;
+                $scope.resultLists = $scope.openLists.slice(start, end);
                 break;
             case "closed":
-                $scope.resultLists = $scope.closeLists;
+                $scope.allResultNum = $scope.closeLists.length;
+                for(var i = 0, len= $scope.closeLists.length / 5; i < len; i++) {
+                    $scope.pages.push(i);
+                }
+                var len= $scope.closeLists.length;
+                var end= (start + 5) < len ? start + 5 : len;
+                $scope.resultLists = $scope.closeLists.slice(start, end);
                 break;
             default:
-                $scope.resultLists = $scope.allLists;
+                $scope.allResultNum = $scope.allLists.length;
+                for(var i = 0, len= $scope.allLists.length / 5; i < len; i++) {
+                    $scope.pages.push(i);
+                }
+                var len= $scope.allLists.length;
+                var end= (start + 5) < len ? start + 5 : len;
+                $scope.resultLists = $scope.allLists.slice(start, end);
         }
+
     }
 
     $scope.getData();
-    //console.log($scope.data);
+    
     $scope.$watch("data", function(newValue) {
-        //console.log(newValue.length);
+        
         if(newValue.length) {
+
             $scope.getOpenIssueData();
             $scope.getClosedIssueData();
             $scope.getAllIssueData();
@@ -59,18 +98,4 @@ app.controller("listController",["$scope", "$location", "$routeParams", function
         }
     })
 
-//     $timeout(function(){
-//         // getOpenNum();
-//         // getClosedNum();
-//         console.log($scope.data);
-// },2000);
-
-
 }]);
-app.directive("list", function() {
-    return {
-        link: function(scope, elem, attrs) {
-
-        }
-    }
-})
