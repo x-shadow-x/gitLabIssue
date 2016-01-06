@@ -9,8 +9,9 @@
             "createTime": 1451989731964,
             "author": "xx一号",
             "assignee": "由谁来解决",
-            "statue": "Closed"
+            "statue": "Closed",
             "updatedTime": 1451989825924,
+            "isMark": false,
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -36,8 +37,9 @@
             "createTime": 1451989731964,
             "author": "xx一号",
             "assignee": "由谁来解决",
-            "statue": "Open"
+            "statue": "Open",
             "updatedTime": 1451989825924,
+            "isMark": false,
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -63,8 +65,9 @@
             "createTime": 1451989731964,
             "author": "xx一号",
             "assignee": "由谁来解决",
-            "statue": "Open"
+            "statue": "Open",
             "updatedTime": 1451989825924,
+            "isMark": false,
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -90,8 +93,9 @@
             "createTime": 1451989731964,
             "author": "xx一号",
             "assignee": "由谁来解决",
-            "statue": "Open"
+            "statue": "Open",
             "updatedTime": 1451989825924,
+            "isMark": false,
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -117,8 +121,9 @@
             "createTime": 1451989731964,
             "author": "xx一号",
             "assignee": "由谁来解决",
-            "statue": "Open"
+            "statue": "Open",
             "updatedTime": 1451989825924,
+            "isMark": false,
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -144,8 +149,9 @@
             "createTime": 1451989731964,
             "author": "xx一号",
             "assignee": "由谁来解决",
-            "statue": "Open"
+            "statue": "Open",
             "updatedTime": 1451989825924,
+            "isMark": false,
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -171,8 +177,9 @@
             "createTime": 1451989731964,
             "author": "xx一号",
             "assignee": "由谁来解决",
-            "statue": "Open"
+            "statue": "Open",
             "updatedTime": 1451989825924,
+            "isMark": false,
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -198,8 +205,9 @@
             "createTime": 1451989731964,
             "author": "xx一号",
             "assignee": "由谁来解决",
-            "statue": "Open"
+            "statue": "Open",
             "updatedTime": 1451989825924,
+            "isMark": false,
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -225,8 +233,9 @@
             "createTime": 1451989731964,
             "author": "xx一号",
             "assignee": "由谁来解决",
-            "statue": "Open"
+            "statue": "Open",
             "updatedTime": 1451989825924,
+            "isMark": false,
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -252,8 +261,9 @@
             "createTime": 1451989731964,
             "author": "xx一号",
             "assignee": "由谁来解决",
-            "statue": "Open"
+            "statue": "Open",
             "updatedTime": 1451989825924,
+            "isMark": false,
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -279,8 +289,9 @@
             "createTime": 1451989731964,
             "author": "xx一号",
             "assignee": "由谁来解决",
-            "statue": "Open"
+            "statue": "Open",
             "updatedTime": 1451989825924,
+            "isMark": false,
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -306,8 +317,9 @@
             "createTime": 1451989731964,
             "author": "xx一号",
             "assignee": "由谁来解决",
-            "statue": "Open"
+            "statue": "Open",
             "updatedTime": 1451989825924,
+            "isMark": false,
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -333,8 +345,9 @@
             "createTime": 1451989731964,
             "author": "xx一号",
             "assignee": "由谁来解决",
-            "statue": "Open"
+            "statue": "Open",
             "updatedTime": 1451989825924,
+            "isMark": false,
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -360,8 +373,9 @@
             "createTime": 1451989731964,
             "author": "xx一号",
             "assignee": "由谁来解决",
-            "statue": "Open"
+            "statue": "Open",
             "updatedTime": 1451989825924,
+            "isMark": false,
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -387,8 +401,9 @@
             "createTime": 1451989731964,
             "author": "xx一号",
             "assignee": "由谁来解决",
-            "statue": "Open"
+            "statue": "Open",
             "updatedTime": 1451989825924,
+            "isMark": false,
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -414,8 +429,9 @@
             "createTime": 1451989731964,
             "author": "xx一号",
             "assignee": "由谁来解决",
-            "statue": "Open"
+            "statue": "Open",
             "updatedTime": 1451989825924,
+            "isMark": false,
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -441,8 +457,9 @@
             "createTime": 1451989731964,
             "author": "xx一号",
             "assignee": "由谁来解决",
-            "statue": "Open"
+            "statue": "Open",
             "updatedTime": 1451989825924,
+            "isMark": false,
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -468,8 +485,9 @@
             "createTime": 1451989731964,
             "author": "xx一号",
             "assignee": "由谁来解决",
-            "statue": "Open"
+            "statue": "Open",
             "updatedTime": 1451989825924,
+            "isMark": false,
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -495,8 +513,9 @@
             "createTime": 1451989731964,
             "author": "xx一号",
             "assignee": "由谁来解决",
-            "statue": "Open"
+            "statue": "Open",
             "updatedTime": 1451989825924,
+            "isMark": false,
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -522,8 +541,9 @@
             "createTime": 1451989731964,
             "author": "xx一号",
             "assignee": "由谁来解决",
-            "statue": "Open"
+            "statue": "Open",
             "updatedTime": 1451989825924,
+            "isMark": false,
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -549,8 +569,9 @@
             "createTime": 1451989731964,
             "author": "xx一号",
             "assignee": "由谁来解决",
-            "statue": "Open"
+            "statue": "Open",
             "updatedTime": 1451989825924,
+            "isMark": false,
             "discussList":[
                 {
                     "userName":"zz一号",
