@@ -1,0 +1,35 @@
+<div data="data" nid="nid" class="issue-details">
+    <div class="page-title">
+        <div class="issue-box issue-box-{{isOpen}}" ng-click="isOpen = !isOpen">{{isOpen ? "Closed" : "Open"}}</div>
+        <span class="issue-id">Issue 1</span>
+        <span class="creator">
+            ·created by
+            <a href="javasript:;" class="author_link">
+                <img src="" alt=""><span class="author">{{data[1].author}}</span>
+            </a>
+            <time><!-- {{dt1 | date:'yyyy-MM-dd HH:mm:ss'}} --></time>
+        </span>
+        <div class="title-right">
+            <a href="javascript:;" class="btn new-issue-link" id="new-issue-link" title=" new-issue-link">NEW ISSUE</a>
+            <a href="javascript:;" class="btn issue-box-{{!isOpen}}" id="new-issue-link" title="close issue" ng-click="isOpen = !isOpen">{{isOpen ? "Reopen" : "Closed"}}</a>
+            <a href="javascript:;" class="btn edit-issue-link" id="edit-issue-link" title=" edit-issue-link"><i></i>EDIT</a>
+        </div>
+    </div>
+    <div class="issue-content">
+        <h2>{{data[1].title}}</h2>
+        <div>
+            {{data[1].description}}
+        </div>
+    </div>
+    <div class="participants"></div>
+    <div class="issue-discussList">
+        <ul>
+            <li ng-repeat="item in data[1].discussList">
+                <span style="font-weight: bold;">{{item.userName}}</span>
+                <span>{{item.text}}</span>
+                <div>{{item.text}}</div>
+            </li>
+        </ul>
+    
+    </div>
+</div>

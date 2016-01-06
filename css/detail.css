@@ -1,0 +1,35 @@
+.issue-details{
+    width: 1200px;
+    padding:0 10px;
+    box-sizing:border-box;
+    
+}
+.issue-box,.issue-id,.creator{
+    float: left;
+}
+.title-right{
+    float: right;
+}
+.issue-box{
+    width: 60px;
+    height: 30px;
+    background-color: #019875;
+    color:#fff;
+    margin: 10px 0px 10px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 3px;
+    cursor:pointer;
+}
+.issue-id{
+    margin-left: 10px;
+}
+.btn{
+    border: 1px solid #999;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    border-radius: 3px;
+    padding:0 10px;
+    font-weight: bold;
+}
