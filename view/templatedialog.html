@@ -1,0 +1,11 @@
+<div>
+
+    <input type="text" class="list" ng-focus="show()" ng-blur="isShow=false" ng-model="keyWord" ng-keyup="keyUp()" placeholder="{{placeholder}}">
+    <span ng-show="isNoMatch">No Match</span>
+    <ul ng-show="isShow">   
+        <li ng-repeat="item in results" ng-class="{'current': $index == index}">
+            <span ng-mousedown = "clickItem($index)">{{item.yourKey ? item.yourKey : item}}</span>
+        </li>
+    </ul>
+</div>
+

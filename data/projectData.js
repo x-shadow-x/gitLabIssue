@@ -6,12 +6,13 @@
             "title": "问题1",
             "description": "问题描述",
             "issueId": "#001",
-            "createTime": 1451989731964,
+            "createTime": 1452053975000,
             "author": "xx一号",
-            "assignee": "由谁来解决",
+            "assignee": "问题发起者1",
             "statue": "Closed",
-            "updatedTime": 1451989825924,
+            "updatedTime": 1451312475000,
             "isMark": false,
+            "version": "v1.0.2.030",
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -34,12 +35,13 @@
             "title": "问题2",
             "description": "问题描述",
             "issueId": "#002",
-            "createTime": 1451989731964,
+            "createTime": 1452063975000,
             "author": "xx一号",
-            "assignee": "由谁来解决",
+            "assignee": "问题发起者1",
             "statue": "Open",
-            "updatedTime": 1451989825924,
+            "updatedTime": 1452038400000,
             "isMark": false,
+            "version": "v1.0.2.030",
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -62,12 +64,13 @@
             "title": "问题3",
             "description": "问题描述",
             "issueId": "#003",
-            "createTime": 1451989731964,
+            "createTime": 1452073975000,
             "author": "xx一号",
-            "assignee": "由谁来解决",
+            "assignee": "问题发起者2",
             "statue": "Open",
             "updatedTime": 1451989825924,
             "isMark": false,
+            "version": "v1.0.2.030",
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -90,12 +93,13 @@
             "title": "问题4",
             "description": "问题描述",
             "issueId": "#004",
-            "createTime": 1451989731964,
+            "createTime": 1452073975000,
             "author": "xx一号",
-            "assignee": "由谁来解决",
+            "assignee": "问题发起者2",
             "statue": "Open",
             "updatedTime": 1451989825924,
             "isMark": false,
+            "version": "v1.0.2.030",
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -120,10 +124,11 @@
             "issueId": "#005",
             "createTime": 1451989731964,
             "author": "xx一号",
-            "assignee": "由谁来解决",
+            "assignee": "问题发起者",
             "statue": "Open",
             "updatedTime": 1451989825924,
             "isMark": false,
+            "version": "v1.0.2.030",
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -147,11 +152,12 @@
             "description": "问题描述",
             "issueId": "#006",
             "createTime": 1451989731964,
-            "author": "xx一号",
-            "assignee": "由谁来解决",
+            "author": "xx6号",
+            "assignee": "问题发起者3",
             "statue": "Open",
             "updatedTime": 1451989825924,
             "isMark": false,
+            "version": "v1.0.2.030",
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -172,14 +178,15 @@
         },
         {
             "title": "问题7",
-            "description": "问题描述",
+            "description": "问题描述3",
             "issueId": "#007",
             "createTime": 1451989731964,
-            "author": "xx一号",
-            "assignee": "由谁来解决",
+            "author": "xx7号",
+            "assignee": "问题发起者",
             "statue": "Open",
             "updatedTime": 1451989825924,
             "isMark": false,
+            "version": "v1.0.2.030",
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -204,10 +211,11 @@
             "issueId": "#008",
             "createTime": 1451989731964,
             "author": "xx一号",
-            "assignee": "由谁来解决",
+            "assignee": "问题发起者",
             "statue": "Open",
             "updatedTime": 1451989825924,
             "isMark": false,
+            "version": "v1.0.2.030",
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -231,11 +239,12 @@
             "description": "问题描述",
             "issueId": "#009",
             "createTime": 1451989731964,
-            "author": "xx一号",
-            "assignee": "由谁来解决",
+            "author": "xx4号",
+            "assignee": "问题发起者4",
             "statue": "Open",
             "updatedTime": 1451989825924,
             "isMark": false,
+            "version": "v1.0.2.030",
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -259,11 +268,12 @@
             "description": "问题描述",
             "issueId": "#010",
             "createTime": 1451989731964,
-            "author": "xx一号",
-            "assignee": "由谁来解决",
+            "author": "xx9号",
+            "assignee": "问题发起者4",
             "statue": "Open",
             "updatedTime": 1451989825924,
             "isMark": false,
+            "version": "v1.0.2.030",
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -287,11 +297,12 @@
             "description": "问题描述",
             "issueId": "#011",
             "createTime": 1451989731964,
-            "author": "xx一号",
-            "assignee": "由谁来解决",
+            "author": "xx11号",
+            "assignee": "问题发起者",
             "statue": "Open",
             "updatedTime": 1451989825924,
             "isMark": false,
+            "version": "v1.0.2.030",
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -315,11 +326,12 @@
             "description": "问题描述",
             "issueId": "#012",
             "createTime": 1451989731964,
-            "author": "xx一号",
-            "assignee": "由谁来解决",
+            "author": "xx13号",
+            "assignee": "问题发起者5",
             "statue": "Open",
             "updatedTime": 1451989825924,
             "isMark": false,
+            "version": "v1.0.2.030",
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -344,10 +356,11 @@
             "issueId": "#013",
             "createTime": 1451989731964,
             "author": "xx一号",
-            "assignee": "由谁来解决",
+            "assignee": "问题发起者5",
             "statue": "Open",
             "updatedTime": 1451989825924,
             "isMark": false,
+            "version": "v1.0.2.030",
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -371,11 +384,12 @@
             "description": "问题描述",
             "issueId": "#014",
             "createTime": 1451989731964,
-            "author": "xx一号",
-            "assignee": "由谁来解决",
+            "author": "xx5号",
+            "assignee": "问题发起者",
             "statue": "Open",
             "updatedTime": 1451989825924,
             "isMark": false,
+            "version": "v1.0.2.030",
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -399,11 +413,12 @@
             "description": "问题描述",
             "issueId": "#015",
             "createTime": 1451989731964,
-            "author": "xx一号",
-            "assignee": "由谁来解决",
+            "author": "xx6号",
+            "assignee": "问题发起者",
             "statue": "Open",
             "updatedTime": 1451989825924,
             "isMark": false,
+            "version": "v1.0.2.030",
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -428,10 +443,11 @@
             "issueId": "#016",
             "createTime": 1451989731964,
             "author": "xx一号",
-            "assignee": "由谁来解决",
+            "assignee": "问题发起者",
             "statue": "Open",
             "updatedTime": 1451989825924,
             "isMark": false,
+            "version": "v1.0.2.030",
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -456,10 +472,11 @@
             "issueId": "#016",
             "createTime": 1451989731964,
             "author": "xx一号",
-            "assignee": "由谁来解决",
+            "assignee": "问题发起者",
             "statue": "Open",
             "updatedTime": 1451989825924,
             "isMark": false,
+            "version": "v1.0.2.030",
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -484,10 +501,11 @@
             "issueId": "#017",
             "createTime": 1451989731964,
             "author": "xx一号",
-            "assignee": "由谁来解决",
+            "assignee": "问题发起者",
             "statue": "Open",
             "updatedTime": 1451989825924,
             "isMark": false,
+            "version": "v1.0.2.030",
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -512,10 +530,11 @@
             "issueId": "#018",
             "createTime": 1451989731964,
             "author": "xx一号",
-            "assignee": "由谁来解决",
+            "assignee": "问题发起者",
             "statue": "Open",
             "updatedTime": 1451989825924,
             "isMark": false,
+            "version": "v1.0.2.030",
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -540,10 +559,11 @@
             "issueId": "#019",
             "createTime": 1451989731964,
             "author": "xx一号",
-            "assignee": "由谁来解决",
+            "assignee": "问题发起者",
             "statue": "Open",
             "updatedTime": 1451989825924,
             "isMark": false,
+            "version": "v1.0.2.030",
             "discussList":[
                 {
                     "userName":"zz一号",
@@ -568,10 +588,11 @@
             "issueId": "#020",
             "createTime": 1451989731964,
             "author": "xx一号",
-            "assignee": "由谁来解决",
+            "assignee": "问题发起者",
             "statue": "Open",
             "updatedTime": 1451989825924,
             "isMark": false,
+            "version": "v1.0.2.030",
             "discussList":[
                 {
                     "userName":"zz一号",
