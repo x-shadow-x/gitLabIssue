@@ -85,44 +85,75 @@ app.controller("listController",["$scope", "$location", "$routeParams", "$http",
         $scope.currentIndex = index;
     }
 
-    $scope.showList = function() {
+    // $scope.showList = function(openLists, closeLists, allLists) {
+
+    //     var start = ($scope.page - 1) * 5;
+    //     $scope.pages = [];
+    //     switch ($scope.statue) {
+    //         case "open":
+    //             $scope.allResultNum = openLists.length;
+    //             for(var i = 0, len = openLists.length / 5; i < len; i++) {
+    //                 $scope.pages.push(i);
+    //             }
+    //             var len = openLists.length;
+    //             var end = (start + 5) < len ? start + 5 : len;
+    //             $scope.resultLists = openLists.slice(start, end);
+    //             break;
+    //         case "closed":
+    //             $scope.allResultNum = closeLists.length;
+    //             for(var i = 0, len = closeLists.length / 5; i < len; i++) {
+    //                 $scope.pages.push(i);
+    //             }
+    //             var len = closeLists.length;
+    //             var end = (start + 5) < len ? start + 5 : len;
+    //             $scope.resultLists = closeLists.slice(start, end);
+    //             break;
+    //         default:
+    //             $scope.allResultNum = allLists.length;
+    //             for(var i = 0, len = allLists.length / 5; i < len; i++) {
+    //                 $scope.pages.push(i);
+    //             }
+    //             var len = allLists.length;
+    //             var end = (start + 5) < len ? start + 5 : len;
+    //             $scope.resultLists = allLists.slice(start, end);
+    //     }
+
+    // }
+    
+
+    $scope.showList = function(lists) {
+
         var start = ($scope.page - 1) * 5;
         $scope.pages = [];
-        switch ($scope.statue) {
-            case "open":
-                $scope.allResultNum = $scope.openLists.length;
-                for(var i = 0, len = $scope.openLists.length / 5; i < len; i++) {
-                    $scope.pages.push(i);
-                }
-                var len = $scope.openLists.length;
-                var end = (start + 5) < len ? start + 5 : len;
-                $scope.resultLists = $scope.openLists.slice(start, end);
-                break;
-            case "closed":
-                $scope.allResultNum = $scope.closeLists.length;
-                for(var i = 0, len = $scope.closeLists.length / 5; i < len; i++) {
-                    $scope.pages.push(i);
-                }
-                var len = $scope.closeLists.length;
-                var end = (start + 5) < len ? start + 5 : len;
-                $scope.resultLists = $scope.closeLists.slice(start, end);
-                break;
-            default:
-                $scope.allResultNum = $scope.allLists.length;
-                for(var i = 0, len = $scope.allLists.length / 5; i < len; i++) {
-                    $scope.pages.push(i);
-                }
-                var len = $scope.allLists.length;
-                var end = (start + 5) < len ? start + 5 : len;
-                $scope.resultLists = $scope.allLists.slice(start, end);
+        $scope.allResultNum = lists.length;
+        for(var i = 0, len = lists.length / 5; i < len; i++) {
+            $scope.pages.push(i);
         }
+        var len = lists.length;
+        var end = (start + 5) < len ? start + 5 : len;
+        $scope.resultLists = lists.slice(start, end);
 
     }
-    $scope.filterData = function() {
-        var arr = [];
-        angular.forEach($scope.resultLists, function(item) {
-            console.log(item);
+
+    $scope.filterData = function(lists, requirements) {
+        if(!requirements) {
+            return lists;
+        }
+        var result = [];
+        angular.forEach(lists, function(item) {
+            var isOk = true;
+            for (pro in requirements){
+                var a = item[pro];
+                var b = requirements[pro];
+                 if(a != b) {
+                    isOk = false;
+                 }
+            } 
+            if(isOk) {
+                result.push(item);
+            }
         });
+        return result;
 
     }
 
@@ -130,13 +161,70 @@ app.controller("listController",["$scope", "$location", "$routeParams", "$http",
         $scope.getOpenIssueData();
         $scope.getClosedIssueData();
         $scope.getAllIssueData();
-        $scope.showList();
+        switch ($scope.statue) {
+            case "open":
+                $scope.showList($scope.openLists);
+                break;
+            case "closed":
+                $scope.showList($scope.closeLists);
+                break;
+            default:
+                $scope.showList($scope.allLists);
+        }
+        //$scope.showList($scope.openLists, $scope.closeLists, $scope.allLists);
         $scope.getAuthor();
         $scope.getAssignee();
     });
 
-    $scope.$watch("keyWord1", function(v) {
-        $scope.filterData();
+    $scope.$watch("keyWord1", function(v) {//authorList
+        var tempLists = [];
+        var requirements = {};
+        if(v) {
+            requirements.assignee = v;
+        }
+        if($scope.keyWord2 && ($scope.keyWord2 != '')) {
+            requirements.author = $scope.keyWord2;
+        }
+        switch ($scope.statue) {
+            case "open":
+
+                tempLists = $scope.filterData($scope.openLists,requirements);
+                //$scope.showList(tempLists);
+                break;
+            case "closed":
+                tempLists = $scope.filterData($scope.closeLists,requirements);
+                //$scope.showList(tempLists);
+                break;
+            default:
+                tempLists = $scope.filterData($scope.allLists,requirements);
+                //$scope.showList(tempLists);
+        }
+        $scope.showList(tempLists);
+    });
+    $scope.$watch("keyWord2", function(v) {//authorList
+        var tempLists = [];
+        var requirements = {};
+        if(v) {
+            requirements.author = v;
+        }
+        if($scope.keyWord1 && ($scope.keyWord1 != '')) {
+            requirements.assignee = $scope.keyWord1;
+        }
+        switch ($scope.statue) {
+            case "open":
+
+                tempLists = $scope.filterData($scope.openLists,requirements);
+                //$scope.showList(tempLists);
+                break;
+            case "closed":
+                tempLists = $scope.filterData($scope.closeLists,requirements);
+                //$scope.showList(tempLists);
+                break;
+            default:
+                tempLists = $scope.filterData($scope.allLists,requirements);
+                //$scope.showList(tempLists);
+        }
+        $scope.showList(tempLists);
     });
 
 }]);
