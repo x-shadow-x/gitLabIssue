@@ -163,53 +163,49 @@ app.controller("listController",["$scope", "$location", "$routeParams", "$http",
         $scope.getAllIssueData();
         switch ($scope.statue) {
             case "open":
-<<<<<<< HEAD
                 $scope.allResultNum = $scope.openLists.length;
                 for(var i = 0, len = $scope.openLists.length / 5; i < len; i++) {
                     $scope.pages.push(i);
                 }
-<<<<<<< HEAD
                 var len= $scope.openLists.length;
-=======
                 var len = $scope.openLists.length;
->>>>>>> 59b28ebd0799418ecf92ef3c2c31477e1fbdc2b8
                 var end = (start + 5) < len ? start + 5 : len;
                 $scope.resultLists = $scope.openLists.slice(start, end);
                 break;
             case "closed":
                 $scope.allResultNum = $scope.closeLists.length;
-<<<<<<< HEAD
+
                 for(var i = 0, len= $scope.closeLists.length / 5; i < len; i++) {
                     $scope.pages.push(i);
                 }
                 var len= $scope.closeLists.length;
                 var end= (start + 5) < len ? start + 5 : len;
-=======
+
                 for(var i = 0, len = $scope.closeLists.length / 5; i < len; i++) {
                     $scope.pages.push(i);
                 }
                 var len = $scope.closeLists.length;
                 var end = (start + 5) < len ? start + 5 : len;
->>>>>>> 59b28ebd0799418ecf92ef3c2c31477e1fbdc2b8
+
                 $scope.resultLists = $scope.closeLists.slice(start, end);
                 break;
             default:
                 $scope.allResultNum = $scope.allLists.length;
-<<<<<<< HEAD
+
                 for(var i = 0, len= $scope.allLists.length / 5; i < len; i++) {
                     $scope.pages.push(i);
                 }
                 var len= $scope.allLists.length;
                 var end= (start + 5) < len ? start + 5 : len;
-=======
+
                 for(var i = 0, len = $scope.allLists.length / 5; i < len; i++) {
                     $scope.pages.push(i);
                 }
                 var len = $scope.allLists.length;
                 var end = (start + 5) < len ? start + 5 : len;
->>>>>>> 59b28ebd0799418ecf92ef3c2c31477e1fbdc2b8
+
                 $scope.resultLists = $scope.allLists.slice(start, end);
-=======
+
                 $scope.showList($scope.openLists);
                 break;
             case "closed":
@@ -217,7 +213,6 @@ app.controller("listController",["$scope", "$location", "$routeParams", "$http",
                 break;
             default:
                 $scope.showList($scope.allLists);
->>>>>>> 128baf7e4c5a2018cdcbbc083c8676c1c406feaf
         }
         //$scope.showList($scope.openLists, $scope.closeLists, $scope.allLists);
         $scope.getAuthor();
