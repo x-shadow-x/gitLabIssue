@@ -26,10 +26,18 @@
         <ul>
             <li ng-repeat="item in data[1].discussList">
                 <span style="font-weight: bold;">{{item.userName}}</span>
-                <span>{{item.text}}</span>
+                <span>{{item.time}}</span>
                 <div>{{item.text}}</div>
             </li>
         </ul>
-    
+        <div class="write">
+            <h4>Write</h4>
+            <textarea palceholder ng-model="text" ng-keydown="add($event,text)"></textarea>
+            <input type="button" class="btn-l" value="ADD COMMENT">
+            <input type="button" class="btn-r" value="REOPEN ISSUE">
+        </div>
     </div>
+    <aside>
+        
+    </aside>
 </div>
