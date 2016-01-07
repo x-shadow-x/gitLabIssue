@@ -33,6 +33,9 @@
     
     <div class="filter">
         <input type="checkBox" ng-model="markAll" ng-click="toggleMarkAll()">
+        <alertdialog placeholder="Assignee" lists="assigneeList" ng-model="keyWord1" key="" class="auto-dialog"></alertdialog>
+        <alertdialog placeholder="Author" lists="authorList" ng-model="keyWord2" key="" class="auto-dialog"></alertdialog>
+
     </div>
     <ul>
         <li ng-repeat="item in resultLists">
