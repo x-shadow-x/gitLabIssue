@@ -1,4 +1,4 @@
-angular.module("app",["ngRoute", "listModule", "detailModule"])
+angular.module("app",["ngRoute", "listModule", "detailModule","newIssueModule","editIssueModule"])
 .config(['$routeProvider',function($routeProvider) {
     $routeProvider
         .when("/list/:listStatues", {
