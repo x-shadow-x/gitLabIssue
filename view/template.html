@@ -1,7 +1,7 @@
-<div class="Assignee-info"><span>Assignee</span><a href="javascript:;" >{{placeholder}}</a></div>
-<input ng-click="toshow=!toshow" placeholder='xx一号' class="assignee">
+<div class="Assignee-info"><a href="javascript:;" >{{placeholder}}</a></div>
+<input ng-click="toshow=!toshow" class="assignee" ng-model="ngModel">
 <div ng-show="toshow" class="dailog">
-    <input type="text" placeholder="Assignee" ng-model="ngModel" ng-keyup="selectItem($event,element)" ng-focus="toShow()" ng-blur="toshow=false">
+    <input type="text" ng-model="ngModel" ng-keyup="selectItem($event,element)" ng-focus="toShow()" ng-blur="toshow=false">
     <ul ng-if="isShown">
         <li ng-class="{'active': $index == symbol}" ng-repeat="item in arr" ng-mousedown="mouseSelect($index)" ng-mouseover="overSelect($index)">{{item}}</li>
     </ul>
