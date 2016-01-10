@@ -4,22 +4,22 @@
     </div>
     <div class="content">
         <div class="tle">
-          <span style="font-weight: bold;">Title* </span><input type="text" placeholder ng-model="title" class="n-tle"><br>  
+          <span style="font-weight: bold;">Title* </span><input type="text" placeholder ng-model="title" class="n-tle" ><br>  
         </div>
         <div class="description" style="overflow: hidden;">
           <span style="float: left;">Description</span> <textarea style="float: left;" ng-model="description"></textarea>  
         </div>
         <div class="assign">      
             <span>Assign to</span>
-            <!-- <complete list="assigneeList" ng-model="assignee" key=""  ></complete> -->
+            <!-- <complete list="assigneeList" ng-model="assignee" key="" placeholder="Assignee" ></complete> -->
         </div>
         <div class="milestone">      
             <span>Milestone</span>
-            <!-- <complete list="versionList" ng-model="version" key=""  ></complete> -->
+            <!-- <complete list="versionList" ng-model="version" key="" placeholder="Version" ></complete> -->
         </div>    
     </div>
     <div class="c-foot">
-        <input type="button" class="submit" value="submit">
-        <input type="button" class="cancel" value="cancel">
+        <input type="button" class="submit" value="submit" ng-click="submit()">
+        <input type="button" class="cancel" value="cancel" ng-click="cancel()">
     </div>
 </div>
