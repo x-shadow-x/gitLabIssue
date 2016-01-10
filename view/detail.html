@@ -12,7 +12,7 @@
         </span>
         <div class="title-right">
             <a href="#/newIssue" class="btn new-issue-link" id="new-issue-link" title=" new-issue-link">NEW ISSUE</a>
-            <a href="javascript:;" class="btn issue-box-{{!isOpen}}" id="new-issue-link" title="close issue" ng-click="isOpen = !isOpen">{{isOpen ? "Reopen" : "Closed"}}</a>
+            <a href="#/closeIssue" class="btn issue-box-{{!isOpen}}" id="new-issue-link" title="close issue" ng-click="isOpen = !isOpen">{{isOpen ? "Reopen" : "Closed"}}</a>
             <a href="#/editIssue" class="btn edit-issue-link" id="edit-issue-link" title=" edit-issue-link"><i></i>EDIT</a>
         </div>
     </div>
@@ -39,7 +39,7 @@
         </div>
     </div>
     <aside>        
-        <complete list="assigneeList" ng-model="assignee" key=""  ></complete>
-        <complete list="versionList" ng-model="version" key=""  ></complete>
+        <complete list="assigneeList" ng-model="assignee" key="" placeholder="Assignee" ></complete>
+        <complete list="versionList" ng-model="version" key="" placeholder="Version" ></complete>
     </aside>
 </div>
