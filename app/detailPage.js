@@ -1,5 +1,5 @@
 angular.module("detailModule", []);
-app.controller('detailController', ['$scope','$location',"$routeParams", "$http","$timeout", function($scope, $location, $routeParams, $http,$timeout){
+app.controller('detailController', ['$scope','$location',"$routeParams", "$http","$timeout","$filter", function($scope, $location, $routeParams, $http,$timeout,$filter){
     $scope.data={};
     $scope.assigneeList = []; 
     $scope.versionList = []; 
@@ -56,7 +56,7 @@ app.controller('detailController', ['$scope','$location',"$routeParams", "$http"
         if(text!==""){
             $scope.isOK = "";
             var tempObj = {};
-            tempObj.userassignee = "zzzz";
+            tempObj.userName = "zzzz";
             tempObj.text = text;
             tempObj.time = 1451989925924;
             $scope.data[1].discussList.push(tempObj);
@@ -107,7 +107,7 @@ app.controller('detailController', ['$scope','$location',"$routeParams", "$http"
                 
             };
             scope.mouseSelect = function(index){
-                scope.ngModel=scope.arr[index].assignee;
+                scope.ngModel=scope.arr[index];
 
             };
             scope.overSelect = function(index){
