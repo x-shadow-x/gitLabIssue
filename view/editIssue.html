@@ -4,10 +4,14 @@
     </div>
     <div class="content">
         <div class="tle">
-          <span style="font-weight: bold;">Title* </span><input type="text" placeholder ng-model="title" class="n-tle"><br>  
+          <span style="font-weight: bold;">Title* </span>
+          <h2>
+            <input type="text" placeholder ng-model="title" class="n-tle">{{data[2].title}}
+          </h2>  
         </div>
         <div class="description" style="overflow: hidden;">
-          <span style="float: left;">Description</span> <textarea style="float: left;" ng-model="description"></textarea>  
+          <span style="float: left;">Description</span>
+          <textarea style="float: left;" ng-model="description">{{data[2].description}}</textarea>  
         </div>
         <div class="assign">      
             <span>Assign to</span>
