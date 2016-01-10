@@ -1,4 +1,5 @@
-<div data="data" nid="nid" class="issue-details">
+<div data="data" class="issue-details">
+
     <div class="page-title">
         <div class="issue-box issue-box-{{isOpen}}" ng-click="isOpen = !isOpen">{{isOpen ? "Closed" : "Open"}}</div>
         <span class="issue-id">Issue 1</span>
@@ -10,14 +11,14 @@
             <time><!-- {{dt1 | date:'yyyy-MM-dd HH:mm:ss'}} --></time>
         </span>
         <div class="title-right">
-            <a href="javascript:;" class="btn new-issue-link" id="new-issue-link" title=" new-issue-link">NEW ISSUE</a>
+            <a href="#/newIssue" class="btn new-issue-link" id="new-issue-link" title=" new-issue-link">NEW ISSUE</a>
             <a href="javascript:;" class="btn issue-box-{{!isOpen}}" id="new-issue-link" title="close issue" ng-click="isOpen = !isOpen">{{isOpen ? "Reopen" : "Closed"}}</a>
-            <a href="javascript:;" class="btn edit-issue-link" id="edit-issue-link" title=" edit-issue-link"><i></i>EDIT</a>
+            <a href="#/editIssue" class="btn edit-issue-link" id="edit-issue-link" title=" edit-issue-link"><i></i>EDIT</a>
         </div>
     </div>
     <div class="issue-content">
-        <h2>{{data[1].title}}</h2>
-        <div>
+        <h2 ng-model="title">{{data[1].title}}</h2>
+        <div ng-model="description">
             {{data[1].description}}
         </div>
     </div>
@@ -32,12 +33,13 @@
         </ul>
         <div class="write">
             <h4>Write</h4>
-            <textarea palceholder ng-model="text" ng-keydown="add($event,text)"></textarea>
-            <input type="button" class="btn-l" value="ADD COMMENT">
-            <input type="button" class="btn-r" value="REOPEN ISSUE">
+            <textarea placeholder ng-model="text"></textarea>
+            <input type="button" class="btn-l" value="ADD COMMENT" ng-click="add(text)" ng-disabled="checked">
+            <input type="button" class="btn-r btn-{{!isOpen}}" value="{{isOpen ? 'REOPEN ISSUE':'CLOSE ISSUE'}}" ng-click="isOpen=!isOpen">
         </div>
     </div>
-    <aside>
-        
+    <aside>        
+        <complete list="assigneeList" ng-model="assignee" key=""  ></complete>
+        <complete list="versionList" ng-model="version" key=""  ></complete>
     </aside>
 </div>
