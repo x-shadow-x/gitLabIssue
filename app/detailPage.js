@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-angular.module("detailModule", []);
+var app = angular.module("detailModule", []);
 app.controller('detailController', ['$scope','$location',"$routeParams", "$http","$timeout","$filter", function($scope, $location, $routeParams, $http,$timeout,$filter){
     $scope.data={};
     $scope.assigneeList = []; 
@@ -154,45 +153,3 @@ app.controller('detailController', ['$scope','$location',"$routeParams", "$http"
         }
     };
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
-angular.module("detailModule", []);
->>>>>>> d63d27397e0736af5f4db8309d48de15f597ed2f
