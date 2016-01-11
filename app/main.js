@@ -1,4 +1,5 @@
 var module = angular.module("app",["ngRoute", "listModule"]);
+
 module.config(['$routeProvider',function($routeProvider) {
     $routeProvider
         .when("/list/:listStatues/:page", {
