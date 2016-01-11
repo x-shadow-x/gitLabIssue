@@ -28,10 +28,9 @@
      border: 1px solid #eee;
      height: 200px;
 }
-.milestone{overflow: hidden;}
-.milestone span{float: left;}
-.assign{overflow: hidden;}
-.assign span{float: left;}
+.milestone,.assign{overflow: hidden;margin-top: 10px;}
+.milestone span,.assign span{float: left;margin-right: 15px;}
+
 
 .c-foot{
     width: 1100px;
