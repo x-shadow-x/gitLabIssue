@@ -1,18 +1,17 @@
-<div data="data" class="issue-details">
+<div class="issue-details" nid="nid">
 
     <div class="page-title">
-        <div class="issue-box issue-box-{{isOpen}}" ng-click="isOpen = !isOpen">{{isOpen ? "Closed" : "Open"}}</div>
-        <span class="issue-id">Issue 1</span>
+        <div class="issue-box issue-box-{{isOpen}}">{{isOpen ? "Open" : "Closed"}}</div>
+        <span class="issue-id">Issue {{nid}}</span>
         <span class="creator">
             ·created by
             <a href="javasript:;" class="author_link">
                 <img src="" alt=""><span class="author">{{data[1].author}}</span>
             </a>
-            <time><!-- {{dt1 | date:'yyyy-MM-dd HH:mm:ss'}} --></time>
         </span>
         <div class="title-right">
             <a href="#/newIssue" class="btn new-issue-link" id="new-issue-link" title=" new-issue-link">NEW ISSUE</a>
-            <a href="#/closeIssue" class="btn issue-box-{{!isOpen}}" id="new-issue-link" title="close issue" ng-click="isOpen = !isOpen">{{isOpen ? "Reopen" : "Closed"}}</a>
+            <a href="javacript:;" class="btn issue-box-{{!isOpen}}" id="new-issue-link" title="close issue" ng-click="Open()">{{isOpen ? "Closed" : "Reopen"}}</a>
             <a href="#/editIssue" class="btn edit-issue-link" id="edit-issue-link" title=" edit-issue-link"><i></i>EDIT</a>
         </div>
     </div>
@@ -33,13 +32,13 @@
         </ul>
         <div class="write">
             <h4>Write</h4>
-            <textarea placeholder ng-model="text"></textarea>
+            <textarea placeholder ng-model="text">444</textarea>
             <input type="button" class="btn-l" value="ADD COMMENT" ng-click="add(text)" ng-disabled="checked">
-            <input type="button" class="btn-r btn-{{!isOpen}}" value="{{isOpen ? 'REOPEN ISSUE':'CLOSE ISSUE'}}" ng-click="isOpen=!isOpen">
+            <input type="button" class="btn-r btn-{{!isOpen}}" value="{{isOpen ? 'CLOSE ISSUE':'REOPEN ISSUE'}}" ng-click="Open()">
         </div>
     </div>
     <aside>        
-        <complete list="assigneeList" ng-model="assignee" key="" placeholder="Assignee" ></complete>
+        <complete list="assigneeList" ng-model="assignee" key="" placeholder="Assignee"></complete>
         <complete list="versionList" ng-model="version" key="" placeholder="Version" ></complete>
     </aside>
 </div>
