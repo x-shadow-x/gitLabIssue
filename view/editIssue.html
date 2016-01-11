@@ -1,25 +1,25 @@
 <div class="newIssue">
     <div class="page-title">
-        <h2>Create Issue</h2>
+        <h2>Edit Issue</h2>
     </div>
     <div class="content">
         <div class="tle">
-          <span style="font-weight: bold;">Title* </span>
           <h2>
-            <input type="text" placeholder ng-model="title" class="n-tle">{{data[2].title}}
+          <span style="font-weight: bold;">Title* </span>
+          <input type="text" placeholder="{{data[1].title}}" ng-model="title" class="n-tle">
           </h2>  
         </div>
         <div class="description" style="overflow: hidden;">
           <span style="float: left;">Description</span>
-          <textarea style="float: left;" ng-model="description">{{data[2].description}}</textarea>  
+          <textarea style="float: left;" ng-model="description" placeholder="{{data[1].description}}"></textarea>  
         </div>
         <div class="assign">      
             <span>Assign to</span>
-            <!-- <complete list="assigneeList" ng-model="assignee" key=""  ></complete> -->
+            <complete list="assigneeList" ng-model="assignee" key=""  ></complete>
         </div>
         <div class="milestone">      
             <span>Milestone</span>
-            <!-- <complete list="versionList" ng-model="version" key=""  ></complete> -->
+            <complete list="versionList" ng-model="version" key="" ></complete>
         </div>    
     </div>
     <div class="c-foot">
