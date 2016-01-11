@@ -1,5 +1,7 @@
 var app = angular.module("listModule",["ng", "ngRoute"]);
-app.controller("listController",["$scope", "$location", "$routeParams", "$http","$timeout", function($scope, $location, $routeParams, $http,$timeout) {
+app.run(function($rootScope) {
+});
+app.controller("listController",["$scope", "$location", "$routeParams", "$http","$timeout","$rootScope", function($scope, $location, $routeParams, $http,$timeout,$rootScope) {
     $scope.data = {};
     $scope.openNum = $scope.closedNum = $scope.allNum = 0;
     $scope.resultLists = [];//显示在当前页的数据
@@ -11,12 +13,79 @@ app.controller("listController",["$scope", "$location", "$routeParams", "$http",
     $scope.allResultNum = 0;//符合过滤的数据的总数
     $scope.statue = $routeParams.listStatues;
     $scope.page = parseInt($routeParams.page);//具体哪页
-
+    $scope.showSort = false;
+    $scope.sortrequests = ['Recently createad','Oldest createad','Recently updated','Oldest updated'];
+    $scope.sortrequest = $scope.sortrequests[0];
 
 //=============================================提示框
     $scope.authorList = [];
     $scope.assigneeList = [];
     $scope.toShow = false;
+
+    //定义比较函数
+    var compareRecentlyCreatead = function(a,b) {
+        //console.log(a);
+        return parseInt(a.createTime) - parseInt(b.createTime);
+    }
+    var compareOldestCreatead = function(a,b) {
+        //console.log(a);
+        return parseInt(b.createTime) - parseInt(a.createTime);
+    }
+    var compareRecentlyUpdated = function(a,b) {
+        //console.log(a);
+        return parseInt(a.updatedTime) - parseInt(b.updatedTime);
+    }
+    var compareOldestUpdated = function(a,b) {
+        //console.log(a);
+        return parseInt(b.updatedTime) - parseInt(a.updatedTime);
+    }
+
+    var order = function(orderRequest) {
+        $scope.openLists.sort(orderRequest);
+        $scope.closeLists.sort(orderRequest);
+        $scope.allLists.sort(orderRequest);
+
+        $rootScope.openLists = $scope.openLists;
+        $rootScope.closeLists = $scope.closeLists;
+        $rootScope.allLists = $scope.allLists;
+
+        console.log($scope.openLists);
+        switch ($scope.statue) {
+            case "open":
+                $scope.showList($scope.openLists);
+                break;
+            case "closed":
+                $scope.showList($scope.closeLists);
+                break;
+            default:
+                $scope.showList($scope.allLists);
+        }
+    }
+
+    //根据不同的选择传入不同的比较函数
+    $scope.choseSortRequest = function(index) {
+        $scope.showSort = false;
+        $scope.sortrequest = $scope.sortrequests[index];
+        switch ($scope.sortrequest) {
+            case 'Recently createad':
+                $rootScope.sortrequest = 'Recently createad';
+                order(compareRecentlyCreatead);
+                break;
+            case 'Oldest createad':
+                $rootScope.sortrequest = 'Oldest createad';
+                order(compareOldestCreatead);
+                break;
+            case 'Recently updated':
+                $rootScope.sortrequest = 'Recently updated';
+                order(compareRecentlyUpdated);
+                break;
+            case 'Oldest updated':
+                $rootScope.sortrequest = 'Oldest updated';
+                order(compareOldestUpdated);
+                break;
+        }
+        
+    }
 
     
     $scope.getData = function(cb) {
@@ -27,6 +96,13 @@ app.controller("listController",["$scope", "$location", "$routeParams", "$http",
         //     $scope.$digest();
         // });
         
+        // $http({
+        //     method:'POST',
+        //     headers: {
+        //         'Content-Type': 'x-www-form-urlencoded'
+        //     }
+        // });
+
         $http.get("data/projectData.js").then(function(data) {
             $scope.data = data.data.data;
             cb();
@@ -55,20 +131,21 @@ app.controller("listController",["$scope", "$location", "$routeParams", "$http",
         }
     }
     $scope.getOpenIssueData = function() {
+        console.log($scope.data);
         for(var i = 0, len = $scope.data.length; i < len; i++) {
             if($scope.data[i].statue == "Open") {
                 $scope.openLists.push($scope.data[i]);
-                $scope.openNum++;
             }
         }
+        $scope.openNum = $scope.openLists.length;
     }
     $scope.getClosedIssueData = function() {
         for(var i = 0, len = $scope.data.length; i < len; i++) {
             if($scope.data[i].statue == "Closed") {
                 $scope.closeLists.push($scope.data[i]);
-                $scope.closedNum++;
             }
         }
+        $scope.closedNum = $scope.closeLists.length;
     }
     $scope.getAllIssueData = function() {
         $scope.allLists = $scope.data;
@@ -84,42 +161,6 @@ app.controller("listController",["$scope", "$location", "$routeParams", "$http",
     $scope.clickItem = function(index) {
         $scope.currentIndex = index;
     }
-
-    // $scope.showList = function(openLists, closeLists, allLists) {
-
-    //     var start = ($scope.page - 1) * 5;
-    //     $scope.pages = [];
-    //     switch ($scope.statue) {
-    //         case "open":
-    //             $scope.allResultNum = openLists.length;
-    //             for(var i = 0, len = openLists.length / 5; i < len; i++) {
-    //                 $scope.pages.push(i);
-    //             }
-    //             var len = openLists.length;
-    //             var end = (start + 5) < len ? start + 5 : len;
-    //             $scope.resultLists = openLists.slice(start, end);
-    //             break;
-    //         case "closed":
-    //             $scope.allResultNum = closeLists.length;
-    //             for(var i = 0, len = closeLists.length / 5; i < len; i++) {
-    //                 $scope.pages.push(i);
-    //             }
-    //             var len = closeLists.length;
-    //             var end = (start + 5) < len ? start + 5 : len;
-    //             $scope.resultLists = closeLists.slice(start, end);
-    //             break;
-    //         default:
-    //             $scope.allResultNum = allLists.length;
-    //             for(var i = 0, len = allLists.length / 5; i < len; i++) {
-    //                 $scope.pages.push(i);
-    //             }
-    //             var len = allLists.length;
-    //             var end = (start + 5) < len ? start + 5 : len;
-    //             $scope.resultLists = allLists.slice(start, end);
-    //     }
-
-    // }
-    
 
     $scope.showList = function(lists) {
 
@@ -158,54 +199,28 @@ app.controller("listController",["$scope", "$location", "$routeParams", "$http",
     }
 
     $scope.getData(function(){
-        $scope.getOpenIssueData();
-        $scope.getClosedIssueData();
-        $scope.getAllIssueData();
+        //console.log($rootScope.openLists);
+        if($rootScope.openLists && $rootScope.openLists.length > 0) {
+            $scope.openLists = $rootScope.openLists;
+            $scope.closeLists = $rootScope.closeLists;
+            $scope.allLists = $rootScope.allLists;
+            $scope.sortrequest = $rootScope.sortrequest;
+            $scope.openNum = $scope.openLists.length;
+            $scope.closedNum = $scope.closeLists.length;
+            $scope.allNum = $scope.allLists.length;
+            $scope.keyWord1 = $rootScope.keyWord1;
+            $scope.keyWord2 = $rootScope.keyWord2;
+            //order($scope.sortrequest);
+        }else {
+            $scope.getOpenIssueData();
+            $scope.getClosedIssueData();
+            $scope.getAllIssueData();
+            $rootScope.sortrequest = 'Recently createad';
+            order(compareRecentlyCreatead);
+        }
+        
         switch ($scope.statue) {
             case "open":
-                $scope.allResultNum = $scope.openLists.length;
-                for(var i = 0, len = $scope.openLists.length / 5; i < len; i++) {
-                    $scope.pages.push(i);
-                }
-                var len= $scope.openLists.length;
-                var len = $scope.openLists.length;
-                var end = (start + 5) < len ? start + 5 : len;
-                $scope.resultLists = $scope.openLists.slice(start, end);
-                break;
-            case "closed":
-                $scope.allResultNum = $scope.closeLists.length;
-
-                for(var i = 0, len= $scope.closeLists.length / 5; i < len; i++) {
-                    $scope.pages.push(i);
-                }
-                var len= $scope.closeLists.length;
-                var end= (start + 5) < len ? start + 5 : len;
-
-                for(var i = 0, len = $scope.closeLists.length / 5; i < len; i++) {
-                    $scope.pages.push(i);
-                }
-                var len = $scope.closeLists.length;
-                var end = (start + 5) < len ? start + 5 : len;
-
-                $scope.resultLists = $scope.closeLists.slice(start, end);
-                break;
-            default:
-                $scope.allResultNum = $scope.allLists.length;
-
-                for(var i = 0, len= $scope.allLists.length / 5; i < len; i++) {
-                    $scope.pages.push(i);
-                }
-                var len= $scope.allLists.length;
-                var end= (start + 5) < len ? start + 5 : len;
-
-                for(var i = 0, len = $scope.allLists.length / 5; i < len; i++) {
-                    $scope.pages.push(i);
-                }
-                var len = $scope.allLists.length;
-                var end = (start + 5) < len ? start + 5 : len;
-
-                $scope.resultLists = $scope.allLists.slice(start, end);
-
                 $scope.showList($scope.openLists);
                 break;
             case "closed":
@@ -224,6 +239,7 @@ app.controller("listController",["$scope", "$location", "$routeParams", "$http",
         var requirements = {};
         if(v) {
             requirements.assignee = v;
+            $rootScope.keyWord1 = v;
         }
         if($scope.keyWord2 && ($scope.keyWord2 != '')) {
             requirements.author = $scope.keyWord2;
@@ -249,6 +265,7 @@ app.controller("listController",["$scope", "$location", "$routeParams", "$http",
         var requirements = {};
         if(v) {
             requirements.author = v;
+            $rootScope.keyWord2 = v;
         }
         if($scope.keyWord1 && ($scope.keyWord1 != '')) {
             requirements.assignee = $scope.keyWord1;

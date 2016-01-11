@@ -14,7 +14,7 @@
 }
 .auto-dialog ul {
     border: 1px solid #ccc;
-    box-shadow: 0px 0px 5px #888888;
+    box-shadow: 0px 0px 5px #888;
     overflow-x: hidden;
     overflow-y: auto;
     width:200px;
@@ -25,7 +25,7 @@
 }
 .auto-dialog ul {
     border: 1px solid #ccc;
-    box-shadow: 0px 0px 5px #888888;
+    box-shadow: 0px 0px 5px #888;
 }
 .auto-dialog ul li {
     height: 40px;
@@ -46,11 +46,21 @@
 }
 .no-match-tip {
     position: absolute;
-    z-index:1000;
+    z-index: 999;
     top:120%;
     height:40px;
     width:200px;
     background-color:#3084BB;
-    box-shadow: 0px 0px 5px #888888;
+    box-shadow: 0px 0px 5px #888;
     line-height:40px;color:#fff;
+}
+.no-match {
+    position: absolute;
+    z-index: 1001;
+    top: 120%;
+    width: 201px;
+    height: 30px;
+    line-height: 30px;
+    box-shadow: 0px 0px 5px #888;
+    background-color: #fff;
 }

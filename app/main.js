@@ -1,7 +1,7 @@
-angular.module("app",["ngRoute", "listModule", "detailModule"])
-.config(['$routeProvider',function($routeProvider) {
+var module = angular.module("app",["ngRoute", "listModule", "detailModule", "directiveModule", "newIssueModule"]);
+module.config(['$routeProvider',function($routeProvider) {
     $routeProvider
-        .when("/list/:listStatues", {
+        .when("/list/:listStatues/:page", {
             templateUrl: "view/list.html",
             controller: "listController"
         })
@@ -13,11 +13,7 @@ angular.module("app",["ngRoute", "listModule", "detailModule"])
             templateUrl: "view/newIssue.html",
             controller: "newIssueController"
         })
-        .when("/editIssue/:dn", {
-            templateUrl: "view/editIssue.html",
-            controller: "editIssueController"
-        })
         .otherwise({
-            redirectTo: "/detail/2"
+            redirectTo: "/list/open/1"
         })
 }])
