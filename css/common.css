@@ -6,16 +6,16 @@ body{
 }
 a{text-decoration: none;color:#777777;}
 *{margin: 0;padding: 0;}
-ul,li{list-style:none;padding: 0;margin: 0;}
-input,textarea{border:none;outline-style: none;resize: none;}
 .page-title{
     height: 50px;
     background: #fff;
     line-height: 50px;
 } /*  这是title的样式 */
-.issue-details,.issue-list,.newIssue{
+.issue-details,.issue-list{
     background-color: #fff;
     margin: 20px auto 0;
     width: 1200px;
+    padding:0 10px;
+    box-sizing:border-box;
 
 }
