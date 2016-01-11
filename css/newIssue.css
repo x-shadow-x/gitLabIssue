@@ -1,6 +1,5 @@
 .newIssue{
     overflow: hidden;
-    height: 540px;
     background-color: #fff;
 }
 .newIssue .page-title {
@@ -29,9 +28,14 @@
      border: 1px solid #eee;
      height: 200px;
 }
+.milestone{overflow: hidden;}
+.milestone span{float: left;}
+.assign{overflow: hidden;}
+.assign span{float: left;}
+
 .c-foot{
     width: 1100px;
-    margin: 20px auto 0;
+    margin: 20px auto;
     padding: 20px;
     background-color: #eee;
     overflow: hidden;
