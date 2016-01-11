@@ -1,4 +1,4 @@
-var module = angular.module("app",["ngRoute", "listModule", "detailModule", "directiveModule", "newIssueModule"]);
+var module = angular.module("app",["ngRoute", "listModule", "directiveModule"]);
 module.config(['$routeProvider',function($routeProvider) {
     $routeProvider
         .when("/list/:listStatues/:page", {
@@ -12,6 +12,10 @@ module.config(['$routeProvider',function($routeProvider) {
         .when("/newIssue", {
             templateUrl: "view/newIssue.html",
             controller: "newIssueController"
+        })
+        .when("/editIssue/:dn", {
+            templateUrl: "view/editIssue.html",
+            controller: "editIssueController"
         })
         .otherwise({
             redirectTo: "/list/open/1"

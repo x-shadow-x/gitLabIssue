@@ -1,0 +1,120 @@
+.newIssue{
+    overflow: hidden;
+    background-color: #fff;
+}
+.newIssue .page-title {
+    border-bottom: 1px solid #eee;  
+}
+.newIssue h2{
+    font-size: 16px;
+}
+.newIssue .content{
+    padding-left: 100px;
+    padding-top: 20px;
+    overflow: hidden;
+}
+.newIssue input.n-tle{
+    height: 50px;
+    width: 1000px;
+    border: 1px solid #eee;
+    margin: 0 0 20px 36px;
+    padding-left: 5px;
+
+}
+.newIssue textarea{
+     width: 1000px;
+     margin-left: 5px;
+     padding-left: 5px;
+     border: 1px solid #eee;
+     height: 200px;
+}
+.milestone,.assign{overflow: hidden;margin-top: 10px;}
+.milestone span,.assign span{float: left;margin-right: 15px;}
+
+
+.c-foot{
+    width: 1100px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #eee;
+    overflow: hidden;
+
+}
+input.submit,input.cancel{
+    width: 100px;
+    height: 50px;
+    font-size: 16px;
+}
+input.submit{
+    float: left;
+    background-color: lightgreen;
+    color:#fff;
+    margin-left: 15px;
+}
+input.cancel{
+    float: right;
+    background-color: #fff;
+    color:#777;
+    border: 1px solid #eee;
+    margin-right: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

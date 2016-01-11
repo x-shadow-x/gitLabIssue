@@ -1,4 +1,4 @@
-var app = angular.module("detailModule", []);
+angular.module("detailModule", []);
 app.controller('detailController', ['$scope','$location',"$routeParams", "$http","$timeout","$filter", function($scope, $location, $routeParams, $http,$timeout,$filter){
     $scope.data={};
     $scope.assigneeList = []; 
@@ -6,7 +6,7 @@ app.controller('detailController', ['$scope','$location',"$routeParams", "$http"
     $scope.checked=true;
     $scope.isOpen=true;
     setTimeout(function(){console.log($scope.assigneeList)},2000);
-    $scope.nid=$routeParams.dno;
+    $scope.nid=parseInt($routeParams.dno);
     $scope.getData = function(cb) {
         console.log('issue');
         $.getJSON("data/projectData.js", function(result) {
@@ -153,3 +153,42 @@ app.controller('detailController', ['$scope','$location',"$routeParams", "$http"
         }
     };
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
