@@ -1,32 +1,22 @@
-.Assignee-info{
-    height: 50px;
-    font-size: 18px;
-    line-height: 50px;
-    width: 200px;
-    font-weight: bold;
-    color:#666!important;
-}
-.Assignee-info a{
-    width: 200px;
-}
-.dailog{
-    position: absolute;
-    background-color: #fff;
-}
 .assignee{
     border: 1px solid #eee;
     height: 50px;
     font-size: 18px;
     line-height: 50px;
+    width: 100%;
     padding-left:10px;
     box-sizing:border-box;
 }
 .dailog {
+    position: absolute;
+    background-color: #fff;
     margin-top: 10px;
     border: 1px solid #eee;
     padding:10px 20px 0;
     width: 280px;
     box-sizing:border-box;
+    height: 300px;
+    overflow:auto;
 }
 .dailog li{
     height: 30px;
