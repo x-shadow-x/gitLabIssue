@@ -10,7 +10,6 @@ app.controller('detailController', ['$scope','$location',"$routeParams", "$http"
     $scope.getData = function(cb) {
         console.log('issue');
         $.getJSON("data/projectData.js", function(result) {
-            //console.log(result.data,"=============================|||||||||||||||||============================");
             $scope.data = result.data;
             cb();
             $scope.$digest();
@@ -93,18 +92,18 @@ app.controller('detailController', ['$scope','$location',"$routeParams", "$http"
         link:function(scope,element,attrs, ctrl){
             scope.symbol = -1;
             scope.selectItem = function(event,element){
+                var len=$(event.currentTarget).parent().find('li').length;
+                console.log(len);
                 var e=$(event.currentTarget).parent().find('li').eq(scope.symbol);
+                console.log(e.parent().scrollTop(e.height() * scope.symbol));
                 switch(event.which){
                     case 38:
                         scope.symbol = scope.symbol>0?scope.symbol-1:0; 
-                        console.log(e.position().top);
                         e.parent().scrollTop(e.height() * scope.symbol);
-                        console.log(scope.symbol);
                         break;
                     case 40:
-                        scope.symbol = scope.symbol+1;
+                        scope.symbol = scope.symbol>=len-1?len-1:scope.symbol+1;
                         e.parent().scrollTop(e.height() * scope.symbol);
-                        console.log(e.position().top);
                         break;
                     case 13:
                         scope.ngModel=scope.arr[scope.symbol];
@@ -144,7 +143,7 @@ app.controller('detailController', ['$scope','$location',"$routeParams", "$http"
                     return;
                 }
                 scope.arr = scope.list;
-                if(scope.arr.length ==0  && scope.symbol == -1){
+                if(scope.arr.length == 0  && scope.symbol == -1){
                     scope.isError=true;
                 }else{
                     scope.isError=false;
