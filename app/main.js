@@ -13,11 +13,11 @@ angular.module("app",["ngRoute", "listModule", "detailModule"])
             templateUrl: "view/newIssue.html",
             controller: "newIssueController"
         })
-        .when("/editIssue", {
+        .when("/editIssue/:dn", {
             templateUrl: "view/editIssue.html",
             controller: "editIssueController"
         })
         .otherwise({
-            redirectTo: "/list/:open"
+            redirectTo: "/detail/2"
         })
 }])
