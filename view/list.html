@@ -27,7 +27,7 @@
             <div class="inline-block">
                 <input type="text" placeholder="Filter by title or description">
             </div>
-            <a href="先放着~等添加问题页写完后加上对应的地址" class="inline-block">添加问题的按钮</a>
+            <a href="#/newIssue" class="inline-block">添加问题的按钮</a>
         </div>
     </div>
     
@@ -35,13 +35,19 @@
         <input type="checkBox" ng-model="markAll" ng-click="toggleMarkAll()">
         <alertdialog placeholder="Assignee" lists="assigneeList" ng-model="keyWord1" key="" class="auto-dialog"></alertdialog>
         <alertdialog placeholder="Author" lists="authorList" ng-model="keyWord2" key="" class="auto-dialog"></alertdialog>
-
+        <div class="right sort">
+            <input type="button" value="{{sortrequest}}" ng-click="showSort = !showSort">
+            <ul ng-show="showSort">
+                <li ng-repeat="item in sortrequests" ng-click="choseSortRequest($index)"><a href="javascript:void(0)">{{item}}</a></li>
+            </ul>
+        </div>
     </div>
     <ul>
         <li ng-repeat="item in resultLists">
             <div>
                 <div class="left inline-block">
-                    <input type="checkBox" ng-model="item.isMark">{{item.title}}   
+                    <input type="checkBox" ng-model="item.isMark">
+                    <a ng-href="#/detail/{{item.issueId.substring(1)}}">{{item.title}}</a>  
                 </div>
                 <div class="right inline-block">
                     <span>头像</span>
