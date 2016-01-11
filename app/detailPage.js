@@ -48,22 +48,25 @@ app.controller('detailController', ['$scope','$location',"$routeParams", "$http"
                 $scope.versionList.push(version);
             }
         }
-    }
-    $scope.Open=function(){
-        console.log($scope.isOpen);
-        $scope.isOpen=!$scope.isOpen;
-
-    }
-
+    };
     $scope.$watch("text", function(v) {
         if(v && (v != "" && $scope.isOpen==true)) {
             $scope.checked=false;
         }
-    })
+    });
+    $scope.Open=function(){
+        console.log($scope.isOpen);
+        $scope.isOpen=!$scope.isOpen;
+        if($scope.isOpen==false){
+            $scope.checked=true;
+        }else{
+            $scope.checked=false;
+        }
+
+    }
     $scope.add=function(text){
         var nid=$scope.nid;
         if(text!==""){
-            
             var tempObj = {};
             tempObj.userName = "zzzz";
             tempObj.text = text;
