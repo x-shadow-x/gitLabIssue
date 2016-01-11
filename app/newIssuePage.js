@@ -45,7 +45,7 @@ app.controller("newIssueController",function($scope) {
         }
     }
     $scope.submit=function(){
-
+        
     };
     $scope.cancel=function(){
 
