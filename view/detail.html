@@ -2,29 +2,29 @@
 
     <div class="page-title">
         <div class="issue-box issue-box-{{isOpen}}">{{isOpen ? "Open" : "Closed"}}</div>
-        <span class="issue-id">Issue {{nid}}</span>
+        <span class="issue-id">Issue {{data[nid].issueId}}</span>
         <span class="creator">
             ·created by
             <a href="javasript:;" class="author_link">
-                <img src="" alt=""><span class="author">{{data[1].author}}</span>
+                <img src="" alt=""><span class="author">{{data[nid].author}}</span>
             </a>
         </span>
         <div class="title-right">
             <a href="#/newIssue" class="btn new-issue-link" id="new-issue-link" title=" new-issue-link">NEW ISSUE</a>
             <a href="javacript:;" class="btn issue-box-{{!isOpen}}" id="new-issue-link" title="close issue" ng-click="Open()">{{isOpen ? "Closed" : "Reopen"}}</a>
-            <a href="#/editIssue" class="btn edit-issue-link" id="edit-issue-link" title=" edit-issue-link"><i></i>EDIT</a>
+            <a href="#/editIssue/{{nid}}" class="btn edit-issue-link" id="edit-issue-link" title=" edit-issue-link"><i></i>EDIT</a>
         </div>
     </div>
     <div class="issue-content">
-        <h2 ng-model="title">{{data[1].title}}</h2>
+        <h2 ng-model="title">{{data[nid].title}}</h2>
         <div ng-model="description">
-            {{data[1].description}}
+            {{data[nid].description}}
         </div>
     </div>
     <div class="participants"></div>
     <div class="issue-discussList">
         <ul>
-            <li ng-repeat="item in data[1].discussList">
+            <li ng-repeat="item in data[nid].discussList">
                 <span style="font-weight: bold;">{{item.userName}}</span>
                 <span>{{item.time}}</span>
                 <div>{{item.text}}</div>
@@ -32,13 +32,15 @@
         </ul>
         <div class="write">
             <h4>Write</h4>
-            <textarea placeholder ng-model="text">444</textarea>
+            <textarea placeholder ng-model="text"></textarea>
             <input type="button" class="btn-l" value="ADD COMMENT" ng-click="add(text)" ng-disabled="checked">
             <input type="button" class="btn-r btn-{{!isOpen}}" value="{{isOpen ? 'CLOSE ISSUE':'REOPEN ISSUE'}}" ng-click="Open()">
         </div>
     </div>
-    <aside>        
-        <complete list="assigneeList" ng-model="assignee" key="" placeholder="Assignee"></complete>
-        <complete list="versionList" ng-model="version" key="" placeholder="Version" ></complete>
+    <aside>
+        <div class="Assignee-info"><a href="javascript:;" >Assignee</a></div> 
+        <complete list="assigneeList" ng-model="assignee" key="" placeholder="{{data[nid].assignee}}"></complete>
+        <div class="Assignee-info"><a href="javascript:;" >Version</a></div>
+        <complete list="versionList" ng-model="version" key="" placeholder="{{data[nid].version}}" ></complete>
     </aside>
 </div>

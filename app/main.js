@@ -1,4 +1,4 @@
-var module = angular.module("app",["ngRoute", "listModule", "detailModule"]);
+var module = angular.module("app",["ngRoute", "listModule"]);
 module.config(['$routeProvider',function($routeProvider) {
     $routeProvider
         .when("/list/:listStatues/:page", {
@@ -13,7 +13,7 @@ module.config(['$routeProvider',function($routeProvider) {
             templateUrl: "view/newIssue.html",
             controller: "newIssueController"
         })
-        .when("/editIssue", {
+        .when("/editIssue/:dn", {
             templateUrl: "view/editIssue.html",
             controller: "editIssueController"
         })

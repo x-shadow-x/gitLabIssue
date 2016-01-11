@@ -1,11 +1,10 @@
-//var app=angular.module("editIssueModule", []);
 app.controller('editIssueController', ['$scope','$location',"$routeParams", "$http","$timeout", function($scope, $location, $routeParams, $http,$timeout){
     $scope.data={};
     $scope.assigneeList = []; 
     $scope.versionList = []; 
-    setTimeout(function(){console.log($scope.assigneeList)},2000);
+    $scope.nid=$routeParams.dn;
+    console.log($scope.nid);
     $scope.getData = function(cb) {
-        console.log('edit');
         $.getJSON("data/projectData.js", function(result) {
             console.log(result.data,"=============================|||||||||||||||||============================");
             $scope.data = result.data;
@@ -34,7 +33,7 @@ app.controller('editIssueController', ['$scope','$location',"$routeParams", "$ht
                 $scope.assigneeList.push(assignee);
             }
         }
-    }
+    };
     $scope.getversion=function(){
         var n={};
         var l=$scope.data.length;
@@ -45,10 +44,14 @@ app.controller('editIssueController', ['$scope','$location',"$routeParams", "$ht
                 $scope.versionList.push(version);
             }
         }
-    }
+    };
     $scope.submit=function(){
-        var valT=$scope.title;
+        
      
-    }
+    };
+    $scope.cancel=function(){
+        
+     
+    };
 
 }]);

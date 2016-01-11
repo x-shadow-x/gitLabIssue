@@ -27,13 +27,6 @@ app.controller('detailController', ['$scope','$location',"$routeParams", "$http"
         $scope.getassignee();
         $scope.getversion();
     });
-
-    $scope.Open=function(){
-        console.log($scope.isOpen);
-        $scope.isOpen=!$scope.isOpen;
-
-    }
-
     $scope.getassignee=function(){
         var n={};
         var l=$scope.data.length;
@@ -55,20 +48,30 @@ app.controller('detailController', ['$scope','$location',"$routeParams", "$http"
                 $scope.versionList.push(version);
             }
         }
-    }
+    };
     $scope.$watch("text", function(v) {
         if(v && (v != "" && $scope.isOpen==true)) {
             $scope.checked=false;
         }
-    })
+    });
+    $scope.Open=function(){
+        console.log($scope.isOpen);
+        $scope.isOpen=!$scope.isOpen;
+        if($scope.isOpen==false){
+            $scope.checked=true;
+        }else{
+            $scope.checked=false;
+        }
+
+    }
     $scope.add=function(text){
+        var nid=$scope.nid;
         if(text!==""){
-            
             var tempObj = {};
             tempObj.userName = "zzzz";
             tempObj.text = text;
             tempObj.time = 1451989925924;
-            $scope.data[1].discussList.push(tempObj);
+            $scope.data[nid].discussList.push(tempObj);
         }
     };
     $scope.toShow=function(){
