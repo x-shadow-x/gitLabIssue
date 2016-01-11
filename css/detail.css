@@ -116,6 +116,17 @@ aside{
     box-sizing:border-box;
     position: relative;
 }
+.Assignee-info{
+    height: 50px;
+    font-size: 18px;
+    line-height: 50px;
+    width: 200px;
+    font-weight: bold;
+    color:#666!important;
+}
+.Assignee-info a{
+    width: 200px;
+}
 
 
 
