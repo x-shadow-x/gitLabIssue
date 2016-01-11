@@ -4,10 +4,13 @@ app.controller('detailController', ['$scope','$location',"$routeParams", "$http"
     $scope.assigneeList = []; 
     $scope.versionList = []; 
     $scope.checked=true;
-    // $scope.toshow=true;
+    $scope.isOpen=true;
+    setTimeout(function(){console.log($scope.assigneeList)},2000);
+    $scope.nid=$routeParams.dno;
     $scope.getData = function(cb) {
+        console.log('issue');
         $.getJSON("data/projectData.js", function(result) {
-            console.log(result.data,"=============================|||||||||||||||||============================");
+            //console.log(result.data,"=============================|||||||||||||||||============================");
             $scope.data = result.data;
             cb();
             $scope.$digest();
@@ -24,6 +27,13 @@ app.controller('detailController', ['$scope','$location',"$routeParams", "$http"
         $scope.getassignee();
         $scope.getversion();
     });
+
+    $scope.Open=function(){
+        console.log($scope.isOpen);
+        $scope.isOpen=!$scope.isOpen;
+
+    }
+
     $scope.getassignee=function(){
         var n={};
         var l=$scope.data.length;
@@ -47,14 +57,13 @@ app.controller('detailController', ['$scope','$location',"$routeParams", "$http"
         }
     }
     $scope.$watch("text", function(v) {
-        if(v && (v != "" && !$scope.isOpen)) {
-          /*  console.log($scope.isOpen);*/
+        if(v && (v != "" && $scope.isOpen==true)) {
             $scope.checked=false;
         }
     })
     $scope.add=function(text){
         if(text!==""){
-            $scope.isOK = "";
+            
             var tempObj = {};
             tempObj.userName = "zzzz";
             tempObj.text = text;
@@ -65,10 +74,7 @@ app.controller('detailController', ['$scope','$location',"$routeParams", "$http"
     $scope.toShow=function(){
         $scope.toshow=true;
     }
-/*    $scope.isOpen=function(){
-        $scope.isOpen=!$scope.isOpen;
 
-    }*/
 }])
 .directive('complete',function(){
     return{
@@ -82,7 +88,6 @@ app.controller('detailController', ['$scope','$location',"$routeParams", "$http"
         },
         templateUrl:'view/template.html',
         link:function(scope,element,attrs, ctrl){
-            scope.isShown = true;
             scope.symbol = -1;
             scope.selectItem = function(event,element){
                 var e=$(event.currentTarget).parent().find('li').eq(scope.symbol);
@@ -99,7 +104,7 @@ app.controller('detailController', ['$scope','$location',"$routeParams", "$http"
                         console.log(e.position().top);
                         break;
                     case 13:
-                        scope.ngModel=scope.arr[scope.symbol].assignee;
+                        scope.ngModel=scope.arr[scope.symbol];
                         console.log(scope.ngModel);
                         break;
                 }
@@ -117,6 +122,9 @@ app.controller('detailController', ['$scope','$location',"$routeParams", "$http"
             scope.isError = false;
             scope.$watch('ngModel', function (value) {
                 scope.symbol = -1;
+                if(!scope.list) {
+                    return;
+                }
                 scope.arr = scope.list.filter(function (item) {
                     var reg = new RegExp(value, 'ig');
                     return reg.test(scope.key ? item[scope.key] : item);
@@ -127,6 +135,18 @@ app.controller('detailController', ['$scope','$location',"$routeParams", "$http"
                     scope.isError=false;
                 }
             });
+            scope.$watch("list", function(v){
+                scope.symbol = -1;
+                if(!v) {
+                    return;
+                }
+                scope.arr = scope.list;
+                if(scope.arr.length ==0  && scope.symbol == -1){
+                    scope.isError=true;
+                }else{
+                    scope.isError=false;
+                }
+            },true);
 
         }
     };
