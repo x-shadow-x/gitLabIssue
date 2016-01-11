@@ -1,0 +1,47 @@
+.Assignee-info{
+    height: 50px;
+    font-size: 18px;
+    line-height: 50px;
+    width: 200px;
+    font-weight: bold;
+    color:#666!important;
+}
+.Assignee-info a{
+    width: 200px;
+}
+.dailog{
+    position: absolute;
+    background-color: #fff;
+}
+.assignee{
+    border: 1px solid #eee;
+    height: 50px;
+    font-size: 18px;
+    line-height: 50px;
+    padding-left:10px;
+    box-sizing:border-box;
+}
+.dailog {
+    margin-top: 10px;
+    border: 1px solid #eee;
+    padding:10px 20px 0;
+    width: 280px;
+    box-sizing:border-box;
+}
+.dailog li{
+    height: 30px;
+    line-height: 30px;
+    padding-left: 30px;
+}
+.dailog li.active{
+    background: darkred;color:white;
+
+}
+.dailog input{
+    height: 30px;
+    border: 1px solid #eee;
+    width: 100%;
+    padding-left: 10px;
+    box-sizing:border-box;
+    background-color: #eee;
+}
