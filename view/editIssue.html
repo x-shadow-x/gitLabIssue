@@ -4,22 +4,20 @@
     </div>
     <div class="content">
         <div class="tle">
-          <h2>
           <span style="font-weight: bold;">Title* </span>
-          <input type="text" placeholder="{{data[1].title}}" ng-model="title" class="n-tle">
-          </h2>  
+          <input type="text" placeholder="{{data[nid].title}}" ng-model="title" class="n-tle">
         </div>
         <div class="description" style="overflow: hidden;">
           <span style="float: left;">Description</span>
-          <textarea style="float: left;" ng-model="description" placeholder="{{data[1].description}}"></textarea>  
+          <textarea style="float: left;" ng-model="description" placeholder="{{data[nid].description}}"></textarea>  
         </div>
         <div class="assign">      
             <span>Assign to</span>
-            <complete list="assigneeList" ng-model="assignee" key=""  ></complete>
+            <complete list="assigneeList" ng-model="assignee" key="" placeholder="{{data[nid].assignee}}" ></complete>
         </div>
         <div class="milestone">      
             <span>Milestone</span>
-            <complete list="versionList" ng-model="version" key="" ></complete>
+            <complete list="versionList" ng-model="version" key="" placeholder="{{data[nid].version}}"></complete>
         </div>    
     </div>
     <div class="c-foot">
