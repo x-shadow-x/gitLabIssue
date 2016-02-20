@@ -1,0 +1,16 @@
+.my-pages {
+    margin: 0;
+    padding: 0;
+}
+.my-pages li {
+    display: inline-block;
+    height: 32px;
+    padding: 2px 15px 2px 15px;
+    border: 1px solid #ccc;
+    line-height: 32px;
+    cursor: pointer;
+}
+.my-pages li.active, .my-pages li:hover {
+    background-color: #2d9fd8;
+    color: #fff;
+}
