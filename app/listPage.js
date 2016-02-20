@@ -1,5 +1,5 @@
 var app = angular.module("listModule",["ng", "ngRoute"]);
-app.run(function($rootScope) {
+app.run(function($rootScope) {//增加git测试代码
 });
 app.controller("listController",["$scope", "$location", "$routeParams", "$http","$timeout","$rootScope", function($scope, $location, $routeParams, $http,$timeout,$rootScope) {
     $scope.data = {};

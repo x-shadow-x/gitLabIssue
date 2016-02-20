@@ -1,5 +1,5 @@
 module.directive("myPages", function(Data, $timeout) {
-    return {
+    return {//增加git测试注释
         scope: {
             pageSize: "@", //每页最多显示多少条数目
             showNum: "@", //当前页的前后显示多少页

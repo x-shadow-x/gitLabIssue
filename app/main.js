@@ -13,7 +13,7 @@ module.config(['$routeProvider',function($routeProvider) {
             templateUrl: "view/newIssue.html",
             controller: "newIssueController"
         })
-        .when("/editIssue/:dn", {//增加这行注释仅仅是用来测试修改文件时git提交的状态
+        .when("/editIssue/:dn", {
             templateUrl: "view/editIssue.html",
             controller: "editIssueController"
         })
